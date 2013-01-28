@@ -9,6 +9,8 @@ terminal using xterm color code sequences and spaces. It uses two space
 characters per "pixel" (since most fixed-width fonts are around twice as tall
 as wide), and supports 216 (6x6x6 color cube) colors.
 
+Images that are too large for the screen will be resampled to fit.
+
 Possible uses include visual status output from scripts, exciting graphical
 error messages, etc.
 
@@ -27,13 +29,8 @@ This code is in the public domain.
 
 ### Future Work
 
-I threw this together in ~15 minutes so there's lots left to do.
-
-I'm not sure if all color modes are properly supported right now (I'm just
-using PIL's `getpixel` method). True alpha blending isn't supported (all
-non-zero alpha values are treated as 255), and it'd be nice to have an option
-to set a background color (right now your terminal's default background color
-is used).
-
-It'd also be great to detect when the image is too big for the terminal and
-warn the user.
+Only color images are currently supported, and some color modes may not work
+(I'm just using PIL's `getpixel` method). True alpha blending isn't supported
+(all non-zero alpha values are treated as 255), and it'd be nice to have an
+option to set a background color (right now your terminal's default background
+color is used).
